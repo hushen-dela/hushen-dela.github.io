@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hushen Dela</title>
   </head>
-  <h1>Hushen Dela</h1>
+  <h1>Hushen Dela <div id="time"></div></h1>
   <div id="app"></div>
   <button onclick="getPage(1);">First page</button>
   <button onclick="getPage(2);">second Page</button>
@@ -52,9 +52,14 @@
               .replaceChildren(makeTable(response.data));
           });
       };
-
+      showTime = () =>{
+        setInterval(() => {
+          document.getElementById("test").appendChild(new Date());
+        }, 1000);
+      }
       window.onload = () => {
         getPage(1);
+        showTime();
       };
     </script>
   </body>
